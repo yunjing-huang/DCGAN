@@ -1,12 +1,7 @@
 import tensorflow as tf
-import glob
-import matplotlib.pyplot as plt
 import numpy as np
-import os
-import PIL
 from tensorflow.keras import layers
 import time
-from IPython import display
 from PIL import Image
 BATCH_SIZE=32
 train_images = tf.keras.preprocessing.image_dataset_from_directory("D:/cb", label_mode=None, batch_size=BATCH_SIZE, image_size=(128, 128))
