@@ -64,8 +64,7 @@ generator_optimizer = tf.keras.optimizers.Adam(1e-4)
 discriminator_optimizer = tf.keras.optimizers.Adam(1e-4)
 EPOCHS = 5000
 noise_dim = 100
-num_examples_to_generate = 16
-seed = tf.random.normal([num_examples_to_generate, noise_dim])
+seed = tf.random.normal([16, noise_dim])
 @tf.function
 def train_step(images):
     noise = tf.random.normal([BATCH_SIZE, noise_dim])
@@ -100,8 +99,3 @@ def train(dataset, epochs):
             discriminator.save('C:/Users/Yunji/PycharmProjects/python1/deeplearning/model/discriminator_at_epoch_{:05d}'.format(epoch))
         print ('Time for epoch {} is {} sec'.format(epoch, time.time()-start))
 train(normalized_images, EPOCHS)
-
-
-
-
-
